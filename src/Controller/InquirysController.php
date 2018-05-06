@@ -12,16 +12,16 @@ class InquirysController extends AppController
   {
 
     $inquiry = $this->Inquirys->newEntity();
+    $this->set(compact('inquiry')); 
     if (!$this->request->is('post') || !$this->request->data) {
-      $this->set(compact('inquiry')); 
       return;
     }
 
     $inquiry = $this->Inquirys->patchEntity($inquiry, $this->request->data);
+    $this->set(compact('inquiry')); 
     if ($inquiry->errors()){
       // error
       $this->Flash->error('問い合わせ内容に不備があります');
-      $this->set(compact('inquiry')); 
       return;
     }
 
@@ -30,11 +30,9 @@ class InquirysController extends AppController
         if (!$this->request->data['chk_flag']){
           // error
           $this->Flash->error('プライバシーボリシーを確認して下さい。');
-          $this->set(compact('inquiry')); 
           return;
         }
 
-        $this->set(compact('inquiry')); 
         $this->render('confirm');
         break;
       case 'send':
@@ -42,7 +40,6 @@ class InquirysController extends AppController
           $this->Flash->error('問い合わせを受けるつけることができませんでした。');
           return;
         }
-//$this->Inquirys->sql();
         if (!$this->sendInquiry($inquiry)) {
           $this->Flash->error('メールを送信することができませんでした');
           return;
@@ -59,7 +56,7 @@ class InquirysController extends AppController
     $email = new Email('default');
 
     return $email->setFrom(['keiko.3010@gmail.com' => 'keiko_test'])
-    	->setTo($inquiry->email_address)
+    	->setTo($inquiry->email)
     	->setSubject('お問い合わせありがとうございます')
     	->send('お問い合わせありがとうございます');
   }

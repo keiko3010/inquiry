@@ -4,7 +4,7 @@
 
 <?= $this->Form->create($inquiry); ?>
 <?= $this->Form->input('name', ['label' => 'お名前 ※必須']); ?>
-<?= $this->Form->input('email_address', ['label' => 'メールアドレス ※必須']); ?>
+<?= $this->Form->input('email', ['label' => 'メールアドレス ※必須']); ?>
 <?= $this->Form->input('company', ['label' => '会社名 ※必須']); ?>
 <?= $this->Form->input('phone_number', ['label' => '電話番号 ※必須']); ?>
 <?= $this->Form->input('postcode', ['label' => '郵便番号']); ?>

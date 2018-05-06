@@ -12,13 +12,6 @@ class InquirysTable extends Table
     $this->addBehavior('Timestamp');
   }
 
-  public function sql(){
-    $sql = $this->getDataSource()->getLog();
-  
-    $this->log($sql);
-    return $sql;
-  }
-
   public function validationDefault(Validator $validator)
   {
     $validator
@@ -30,15 +23,15 @@ class InquirysTable extends Table
           'message' => '100文字以内で入力してくだい。'
         ]
       ])
-      ->notEmpty('email_address','未入力です。')
-      ->requirePresence('email_address')
-      ->add('email_address', [
+      ->notEmpty('email','未入力です。')
+      ->requirePresence('email')
+      ->add('email', [
         'length' => [
           'rule' => ['maxLength', 255],
           'message' => '255文字以内で入力してくだい。'
         ]
       ])
-      ->add('email_address', [
+      ->add('email', [
         'valid-email' => [
           'rule' => ['email'],
           'message' => 'メールアドレス以外が入力されています。'

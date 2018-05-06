@@ -9,7 +9,7 @@
 </dl>
 <dl>
   <dt>メールアドレス</dt>
-  <dd><?php echo h($inquiry->email_address); ?></dd>
+  <dd><?php echo h($inquiry->email); ?></dd>
 </dl>
 <dl>
   <dt>会社名</dt>
@@ -38,7 +38,7 @@
 
 <?= $this->Form->create($inquiry); ?>
 <?= $this->Form->hidden('name', ['value' => $inquiry->name]); ?>
-<?= $this->Form->hidden('email_address', ['value' => $inquiry->email_address]); ?>
+<?= $this->Form->hidden('email', ['value' => $inquiry->email]); ?>
 <?= $this->Form->hidden('company', ['value' => $inquiry->company]); ?>
 <?= $this->Form->hidden('phone_number', ['value' => $inquiry->phone_number]); ?>
 <?= $this->Form->hidden('postcode', ['value' => $inquiry->postcode]); ?>
