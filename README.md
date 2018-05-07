@@ -49,3 +49,18 @@ configuration relevant for your application.
 The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) (v5) CSS
 framework by default. You can, however, replace it with any other library or
 custom styles.
+
+## DDL記載してなかったので追記
+CREATE DATABASE `inquiry_test_db`; 
+CREATE TABLE `inquirys` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `phone_number` varchar(20) DEFAULT NULL,
+  `postcode` varchar(10) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `body` text,
+  `created` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
