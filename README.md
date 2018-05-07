@@ -50,8 +50,9 @@ The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) (v5)
 framework by default. You can, however, replace it with any other library or
 custom styles.
 
-## DDL記載してなかったので追記
+## DDL
 CREATE DATABASE `inquiry_test_db`; 
+
 CREATE TABLE `inquirys` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
@@ -64,3 +65,4 @@ CREATE TABLE `inquirys` (
   `body` text,
   `created` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
