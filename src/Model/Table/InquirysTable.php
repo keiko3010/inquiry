@@ -59,7 +59,7 @@ class InquirysTable extends Table
           'message' => '電話番号以外が入力されています。'
         ]
       ])
-      ->requirePresence('postcode')
+      ->allowEmpty('postcode')
       ->add('postcode', [
         'length' => [
           'rule' => ['maxLength', 20],
@@ -72,7 +72,7 @@ class InquirysTable extends Table
           'message' => '郵便番号以外が入力されています。'
         ]
       ])
-      ->requirePresence('address')
+      ->allowEmpty('address')
       ->add('address', [
         'length' => [
           'rule' => ['maxLength', 255],
